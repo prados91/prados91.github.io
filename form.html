@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="Es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles2.css">
+  
+  <title>Contacto</title>
+
+  <!-- Google FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+</head>
+
+<body>
+  <div class="menu-btn">
+    <!-- Botón menú-->
+    <i class="fas fa-bars fa-2x"></i>
+  </div>
+
+  <!-- INI Clase Contenedor. Aquí se encuentra la estructura de la página-->
+  <div class="container">
+    <nav class="nav-main">
+      <!-- Clase Navegación-->
+      <img src="img/DOBLE_AA_Logo_1.jpg" alt="Fotografia LOGO" class="nav-brand">
+      <!-- Logo de pagina. Cambiar donde dice SRC para colocar otro logo-->
+      <ul class="nav-menu">
+        <!-- Menu de navegación. Donde dice HREF, cambiar el # por la página de referencia.-->
+        <li>
+          <a href="index.html">Inicio</a>
+        </li>
+        <li>
+          <a href="#">Página 1</a>
+        </li>
+        <li>
+          <a href="#">Página 2</a>
+        </li>
+        <li>
+          <a href="#">Página 3</a>
+        </li>
+        <li>
+          <a href="#">Página 4</a>
+        </li>
+        <li>
+          <a href="#">Página 5</a>
+        </li>
+        <li>
+          <a href="form.html">Contacto</a>
+        </li>
+      </ul>
+
+      <ul class="nav-menu-right">
+        <!-- Lupa de buscador-->
+        <li>
+          <a href="#">
+            <i class="fas fa-search"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <hr> <!-- Para agregar una línea de división entre Header y Body-->
+  </div>
+
+  <section class="contact">
+    <div class="u-wrapper">
+      <div class="contact-content">
+        <form id="form" action="" class="form">
+          <h3 class="tag"><span>Contacto</span></h3>
+          <label for="name">Nombre Completo <span>*</span></label>
+          <input name="name" required type="text" id="name" placeholder="---">
+          <label for="email">Correo electrónico <span>*</span></label>
+          <input name="email" type="text" id="email" required placeholder="---">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" id="" cols="30" rows="10"></textarea>
+          <button type="submit" class="btn">Enviar mensaje</button>
+        </form>
+        <a href="mailto:#" id="oculto"></a>
+      </div>
+    </div>
+  </section>
+
+     <!-- INI FOOTER. -->
+    <footer class="footer">
+        <h3>Copyright 2022 - Todos los derechos reservados.</h3>
+    </footer>
+    <!-- FIN FOOTER. -->
+
+  <script>
+    const $form = document.querySelector('#form')
+    const $buttonMailto = document.querySelector('#oculto')
+
+    $form.addEventListener('submit', handleSubmit)
+
+    function handleSubmit(event) {
+      event.preventDefault()
+      const form = new FormData(this)
+      $buttonMailto.setAttribute('href', `mailto:#?subject=nombre ${form.get('name')}  correo ${form.get('email')}&body=${form.get('message')}`)
+      $buttonMailto.click()
+    }
+  </script>
+
+  <!-- INI SCRIPT JS-->
+
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- LLamado a JS-->
+    <script src="main.js"></script>
+
+    <!-- FIN SCRIPT JS-->
+</body>
+
+</html>
